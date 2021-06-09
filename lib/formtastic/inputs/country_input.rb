@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Formtastic
   module Inputs
     # Outputs a country select input, wrapping around a regular country_select helper.
@@ -72,7 +73,7 @@ module Formtastic
       def to_html
         raise CountrySelectPluginMissing, "To use the :country input, please install a country_select plugin, like this one: https://github.com/stefanpenner/country_select" unless builder.respond_to?(:country_select)
         input_wrapping do
-          label_html <<
+          label_html +
           builder.country_select(method, priority_countries, input_options, input_html_options)
         end
       end

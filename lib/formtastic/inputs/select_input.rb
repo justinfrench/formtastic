@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Formtastic
   module Inputs
     # A select input is used to render a `<select>` tag with a series of options to choose from.
@@ -164,7 +165,7 @@ module Formtastic
 
       def to_html
         input_wrapping do
-          label_html <<
+          label_html +
           select_html
         end
       end

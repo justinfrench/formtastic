@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Formtastic
   module Inputs
     # Outputs a label and a text field, along with a datalist tag
@@ -18,9 +19,9 @@ module Formtastic
       def to_html
         @name = input_html_options[:id].gsub(/_id$/, "")
         input_wrapping do
-          label_html <<
-          builder.text_field(method, input_html_options) << # standard input
-          data_list_html # append new datalist element
+          # standard input
+          # append new datalist element
+          label_html + builder.text_field(method, input_html_options) + data_list_html
         end
       end
 

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Formtastic
   module Inputs
     # Boolean inputs are used to render an input for a single checkbox, typically for attributes
@@ -34,8 +35,7 @@ module Formtastic
 
       def to_html
         input_wrapping do
-          hidden_field_html <<
-          label_with_nested_checkbox
+          hidden_field_html + label_with_nested_checkbox
         end
       end
 
@@ -59,7 +59,7 @@ module Formtastic
       end
 
       def label_text_with_embedded_checkbox
-        check_box_html << "" << label_text
+        check_box_html + "" + label_text
       end
 
       def check_box_html
